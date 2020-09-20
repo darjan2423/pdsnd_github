@@ -5,7 +5,7 @@
 **Project Title:**   *Explore US BikeShare Data*
 
 ### Description
-Describe what your project is about and what it does
+**Project Description:**   *Use Python to understand US. bikeshare data. Calculate statistics and build an interactive environment where a user chooses the data and filter for a dataset to anlyze.*
 
 ### Files used
 Include the files used
