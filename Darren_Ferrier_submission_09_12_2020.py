@@ -112,7 +112,7 @@ def scroll_raw_data(df):
         if scroll_data =="yes" or scroll_data =="no":
 
             break
-        print("Oops try again")
+        print("Oops try again. User input did not match the specified fromat.")
         print("\n")
     if scroll_data=="yes":
         a=0
@@ -128,7 +128,7 @@ def scroll_raw_data(df):
 
                 if scroll_data =="yes" or scroll_data =="no":
                     break
-                print("Oops try again")
+                print("Oops try again. User input did not match the specified fromat.")
                 print("\n")
 
             if scroll_data=="yes":
