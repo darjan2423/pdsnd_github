@@ -18,7 +18,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
- 
+
         print("Enter the name of the city to be anlyzed.\nNote the name of the city must be one of the following cities and entered in the format shown below.")
         city= input("(chicago, new york city, washington): ")
 
@@ -26,13 +26,13 @@ def get_filters():
             print(city)
             break
 
-        print("Oops try again")
+        print("Oops try again. User input did not match the specified fromat.")
         print("\n")
- 
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
- 
+
         print("\nEnter the name of the month that you want anlyzed.\nNote the month must be one of the following and entered in the format shown below.")
         month= input("(all, january, february, march, april, may, or june): ")
 
@@ -40,12 +40,12 @@ def get_filters():
             print(month)
             break
 
-        print("Oops try again")
+        print("Oops try again. User input did not match the specified fromat.")
         print("\n")
- 
+
 # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
- 
+
         print("\nEnter the name of the day of the week that you want anlyzed.\nNote the day of the week must be entered in the format shown below.")
         day=input("(all, monday, tuesday, wednesday, thursday, friday, saturday, or sunday): ")
 
@@ -53,7 +53,7 @@ def get_filters():
             print(day)
             break
 
-        print("Oops try again")
+        print("Oops try again. User input did not match the specified fromat.")
         print("\n")
 
 
@@ -98,7 +98,7 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-    
+
     return df
 
 def scroll_raw_data(df):
@@ -107,10 +107,10 @@ def scroll_raw_data(df):
     while True:
         print('\nWould you like to browse the selected data?')
         scroll_data= input("(yes or no?) ")
-    
-    
+
+
         if scroll_data =="yes" or scroll_data =="no":
-          
+
             break
         print("Oops try again")
         print("\n")
@@ -121,23 +121,23 @@ def scroll_raw_data(df):
     #nested hile loops to prompt user to see if they would like to see more data and check for valid response
     while True:
         if scroll_data =="yes":
-            
+
             while True:
                 print('\nWould you like to browse more data?')
                 scroll_data= input("(yes or no?) ")
-             
+
                 if scroll_data =="yes" or scroll_data =="no":
                     break
                 print("Oops try again")
-                print("\n")  
-                
+                print("\n")
+
             if scroll_data=="yes":
                 a=a+5
                 b=b+5
                 print(df[a:b])
         else:
             break
-     
+
     print('-'*40)
 
 def time_stats(df):
@@ -145,7 +145,7 @@ def time_stats(df):
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
-    
+
      # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
@@ -181,7 +181,7 @@ def time_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
@@ -195,7 +195,7 @@ def station_stats(df):
 
     print('\nMost Popular Start Station:', most_popular_start_station)
     print("Number of Commuters:", most_popular_start_station_count[most_popular_start_station ])
-   
+
 
     # TO DO: display most commonly used end station
     most_popular_end_station = df['End Station'].mode()[0]
@@ -226,7 +226,7 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
     total_commute_time=df['Trip Duration'].sum()
     print("\nApproximate Total Commuter Comute Time (in minutes)",total_commute_time//60)
-    
+
     # TO DO: display mean travel time
     average_commute_time=df['Trip Duration'].mean()
     print("\nApproximate Average Commuter Comute Time (in minutes)",average_commute_time//60)
@@ -249,16 +249,16 @@ def user_stats(df,city):
         print('\nGender of Customers:\n', df['Gender'].value_counts())
 
         # TO DO: Display earliest, most recent, and most common year of birth
- 
+
         most_common_birth_year = df['Birth Year'].mode()[0]
-        oldest_commuters_birth_year = df['Birth Year'].min()      
-        youngest_commuters_birth_year = df['Birth Year'].max()                             
+        oldest_commuters_birth_year = df['Birth Year'].min()
+        youngest_commuters_birth_year = df['Birth Year'].max()
         print('\nMost Common Commuter Birth Year:',most_common_birth_year)
         print("\nOldest Commuter Birth Year: ", oldest_commuters_birth_year)
         print("\nYoungest Commuter Birth Year: ", youngest_commuters_birth_year)
     else:
         print("\nData was not collected on Gender and Birth year for the city of Washington\n")
-        
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -271,7 +271,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df,city)
-      
+
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
