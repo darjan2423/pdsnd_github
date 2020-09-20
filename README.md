@@ -1,15 +1,15 @@
 ### Date created
-Include the date you created this project and README file.
+**Project Created:** *09/12/2020*
 
 ### Project Title
-Replace the Project Title
+**Project Title:**   *Explore US BikeShare Data*
 
 ### Description
-Describe what your project is about and what it does
+**Project Description:**   *Use Python to understand US. bikeshare data. Calculate statistics and build an interactive environment where a user chooses the data and filter for a dataset to anlyze.*
 
 ### Files used
-Include the files used
+**Files Used:** *chicago.csv, new_york_city.csv, washington.csv*
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+**Project Credit*
+[link to pandas documentation](https://pandas.pydata.org/pandas-docs/stable/)
